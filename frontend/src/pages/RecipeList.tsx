@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useRecipes from "../hooks/useRecipes";
 
 const RecipeList: React.FC = () => {
@@ -6,6 +7,7 @@ const RecipeList: React.FC = () => {
   const limit = 10;
   const { data, error, isLoading } = useRecipes(page, limit);
   const [expandedRecipe, setExpandedRecipe] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   if (isLoading) return <div className="text-center py-4">Loading...</div>;
   if (error)
@@ -19,6 +21,12 @@ const RecipeList: React.FC = () => {
 
   return (
     <div className="container mx-auto p-4">
+      <button
+        className="bg-green-500 text-white py-2 px-4 rounded mb-4"
+        onClick={() => navigate("/add")}
+      >
+        Add Recipe
+      </button>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {data?.map((recipe: any) => (
           <div
@@ -26,7 +34,7 @@ const RecipeList: React.FC = () => {
             className="bg-white shadow-md rounded-lg overflow-hidden"
           >
             <img
-              src={`http://localhost:8080/uploads/${recipe.image}`}
+              src={`http://localhost:8080${recipe.image}`}
               alt={recipe.name}
               className="w-full h-48 object-cover"
             />

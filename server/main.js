@@ -32,29 +32,39 @@ app.use(middlewares);
 app.use('/uploads', express.static('uploads'));
 
 // Custom route to handle multipart/form-data POST requests
-app.post('/recipes', upload.single('image'), (req, res) => {
+app.post("/recipes", upload.single("image"), (req, res) => {
   const db = router.db; // Get lowdb instance
 
   // Extract form data from request
-  const { name, ingredients, instructions, cuisineId, dietId, difficultyId } = req.body;
+  const { name, ingredients, instructions, cuisineId, dietId, difficultyId } =
+    req.body;
+
+  // Ensure ingredients are parsed as array if sent as JSON string
+  let ingredientsArray;
+  try {
+    ingredientsArray = JSON.parse(ingredients);
+  } catch (e) {
+    ingredientsArray = ingredients ? ingredients.split(",") : [];
+  }
 
   // Create new recipe object
   const newRecipe = {
     id: String(Date.now()), // Generate a simple unique ID
     name,
-    ingredients: ingredients ? ingredients.split(',') : [],
+    ingredients: ingredientsArray,
     instructions,
     cuisineId,
     dietId,
     difficultyId,
-    image: req.file ? `/uploads/${req.file.filename}` : null
+    image: req.file ? `/uploads/${req.file.filename}` : null,
   };
 
   // Save new recipe to the database
-  db.get('recipes').push(newRecipe).write();
+  db.get("recipes").push(newRecipe).write();
 
   res.status(201).json(newRecipe);
 });
+
 
 // Utility functions to get cuisine and difficulty names by ID
 const getCuisineNameById = (id, db) => {

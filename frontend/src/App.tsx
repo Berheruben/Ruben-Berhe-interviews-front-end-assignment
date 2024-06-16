@@ -6,14 +6,16 @@ import queryClient from "./api/query";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import RecipeDetails from "./pages/RecipeDetails";
 
 const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
-        <Routes>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<RecipeList />} />
           <Route path="/add" element={<AddRecipe />} />
+          <Route path="/recipes/:id" element={<RecipeDetails />} />
         </Routes>
       </Router>
       <ToastContainer />

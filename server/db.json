@@ -423,10 +423,11 @@
     {
       "id": "1718276396931",
       "name": "cheesecake",
-      "ingredients": [
-        "[\"zucchero\"",
-        "\"nutella\"",
-        "\"burro\"]"
+      "ingredients": 
+      [
+        "zucchero",
+        "nutella",
+        "burro"
       ],
       "instructions": "Per preparare la cheesecake senza cottura iniziate sbriciolando i biscotti, dovrete ridurli in polvere con l’aiuto di un mixer oppure di un mattarello, mettendo i biscotti in un sacchetto per alimenti oppure tra due fogli di carta da forno.\r\n\r\nAggiungete lo zucchero e la scorza grattugiata di un limone, quindi fondete il burro e unitelo ai biscotti incorporandolo bene.\r\n\r\nFate rinvenire la gelatina in 60 g di acqua fredda. Foderate la base di uno stampo a cerniera di 24 cm con della carta da forno quindi versatevi il composto di biscotti e compattate bene e livellate, questa sarà la base della vostra cheesecake. Infine riponete in frigorifero.",
       "cuisineId": "italian",

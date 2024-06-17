@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import useRecipes from "../hooks/useRecipes";
 
 const RecipeList: React.FC = () => {
-  const [page, setPage] = useState(1);
-  const limit = 10;
+  const [page, setPage] = useState<number>(1);
+  const limit = 12;
   const { data, error, isLoading } = useRecipes(page, limit);
   const [expandedRecipe, setExpandedRecipe] = useState<string | null>(null);
   const navigate = useNavigate();
@@ -31,16 +31,31 @@ const RecipeList: React.FC = () => {
         {data?.map((recipe: any) => (
           <div
             key={recipe.id}
-            className="bg-white shadow-md rounded-lg overflow-hidden"
+            className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer"
+            onClick={() => navigate(`/recipes/${recipe.id}`)}
           >
-            <img
-              src={`http://localhost:8080${recipe.image}`}
-              alt={recipe.name}
-              className="w-full h-48 object-cover"
-            />
+            {recipe.image ? (
+              <img
+                src={`http://localhost:8080${recipe.image}`}
+                alt={recipe.name}
+                className="w-full h-48 object-cover"
+              />
+            ) : (
+              <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
+                No Image
+              </div>
+            )}
             <div className="p-4">
-              <h2 className="text-xl font-bold mb-2">{recipe.name}</h2>
-              Ingredients:
+              <h2
+                className="text-xl font-bold mb-2"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigate(`/recipes/${recipe.id}`);
+                }}
+              >
+                {recipe.name}
+              </h2>
+              <p className="text-gray-700 mb-4">Ingredients:</p>
               <ul className="list-disc pl-5 mb-4">
                 {recipe.ingredients.map((ingredient: string, index: number) => (
                   <li key={index} className="text-gray-700">
@@ -54,7 +69,10 @@ const RecipeList: React.FC = () => {
                   : `${recipe.instructions.substring(0, 100)}...`}
               </p>
               <button
-                onClick={() => handleReadMore(recipe.id)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleReadMore(recipe.id);
+                }}
                 className="text-blue-500 hover:underline"
               >
                 {expandedRecipe === recipe.id ? "Read less" : "Read more"}

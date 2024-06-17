@@ -352,19 +352,7 @@
       "difficultyId": "1",
       "image": "/uploads/Pasta-Primavera-f.jpg"
     },
-    {
-      "id": "1718207114898",
-      "name": "tiramisu alla fragola",
-      "ingredients": [
-        "[\"mascarpone\"",
-        "\"fragola\"]"
-      ],
-      "instructions": "mascarpone e fragola",
-      "cuisineId": "1",
-      "dietId": "2",
-      "difficultyId": "2",
-      "image": "/uploads/1718207114890.jpg"
-    },
+  
     {
       "id": "1718207691780",
       "name": "tiramisu alla fragola",
@@ -435,10 +423,11 @@
     {
       "id": "1718276396931",
       "name": "cheesecake",
-      "ingredients": [
-        "[\"zucchero\"",
-        "\"nutella\"",
-        "\"burro\"]"
+      "ingredients": 
+      [
+        "zucchero",
+        "nutella",
+        "burro"
       ],
       "instructions": "Per preparare la cheesecake senza cottura iniziate sbriciolando i biscotti, dovrete ridurli in polvere con l’aiuto di un mixer oppure di un mattarello, mettendo i biscotti in un sacchetto per alimenti oppure tra due fogli di carta da forno.\r\n\r\nAggiungete lo zucchero e la scorza grattugiata di un limone, quindi fondete il burro e unitelo ai biscotti incorporandolo bene.\r\n\r\nFate rinvenire la gelatina in 60 g di acqua fredda. Foderate la base di uno stampo a cerniera di 24 cm con della carta da forno quindi versatevi il composto di biscotti e compattate bene e livellate, questa sarà la base della vostra cheesecake. Infine riponete in frigorifero.",
       "cuisineId": "italian",
@@ -629,6 +618,34 @@
       "comment": "Fresh and vibrant.",
       "rating": 4,
       "date": "2024-07-02T14:20:00.000Z"
+    },
+    {
+      "comment": "good food",
+      "rating": 5,
+      "date": "2024-06-14T11:19:38.318Z",
+      "recipeId": "5",
+      "id": "XlXly5w"
+    },
+    {
+      "comment": "fantastic",
+      "rating": 4,
+      "date": "2024-06-14T11:28:20.598Z",
+      "recipeId": "12",
+      "id": "9lcyqsw"
+    },
+    {
+      "comment": "not good",
+      "rating": 0,
+      "date": "2024-06-14T11:28:36.912Z",
+      "recipeId": "1718207691780",
+      "id": "YBLFFDV"
+    },
+    {
+      "comment": "prova",
+      "rating": 4.5,
+      "date": "2024-06-14T11:36:17.146Z",
+      "recipeId": "1",
+      "id": "Kj8-GHT"
     }
   ],
   "cuisines": [

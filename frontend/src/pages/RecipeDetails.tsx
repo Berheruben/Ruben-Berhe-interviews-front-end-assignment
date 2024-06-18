@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import ReactStars from "react-stars";
+import Rating from "@mui/material/Rating";
 import Button from "../components/Button";
 
 const RecipeDetails: React.FC = () => {
@@ -10,9 +10,8 @@ const RecipeDetails: React.FC = () => {
   const [recipe, setRecipe] = useState<any>(null);
   const [comments, setComments] = useState<any[]>([]);
   const [newComment, setNewComment] = useState("");
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState<number | null>(0);
 
-  // Fetch recipe details and comments when the component mounts or the recipe ID changes
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
@@ -37,10 +36,10 @@ const RecipeDetails: React.FC = () => {
     fetchRecipe();
     fetchComments();
   }, [id]);
-  // Handle form submission to add a new comment
+
   const handleCommentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (rating < 1) {
+    if (!rating || rating < 1) {
       toast.error("Please give a rating of at least 1 star.");
       return;
     }
@@ -63,7 +62,7 @@ const RecipeDetails: React.FC = () => {
     }
   };
 
-
+  if (!recipe) return <div>Loading...</div>;
 
   return (
     <div className="container mx-auto p-4">
@@ -92,13 +91,7 @@ const RecipeDetails: React.FC = () => {
         {comments.map((comment) => (
           <li key={comment.id} className="bg-gray-100 p-4 rounded-lg shadow-md">
             <p className="font-bold mb-1">{comment.comment}</p>
-            <ReactStars
-              count={5}
-              value={comment.rating}
-              size={24}
-              color2={"#ffd700"}
-              edit={false}
-            />
+            <Rating value={comment.rating} readOnly />
             <p className="text-gray-400 text-sm">
               {new Date(comment.date).toLocaleDateString()}
             </p>
@@ -113,13 +106,13 @@ const RecipeDetails: React.FC = () => {
           onChange={(e) => setNewComment(e.target.value)}
           required
         />
-        <ReactStars
-          count={5}
+        <Rating
+          name="recipe-rating"
           value={rating}
-          onChange={(newRating) => setRating(newRating)}
-          size={24}
-          color2={"#ffd700"}
-          half={true}
+          onChange={(_, newValue) => {
+            setRating(newValue);
+          }}
+          precision={0.5}
         />
         <Button
           type="submit"

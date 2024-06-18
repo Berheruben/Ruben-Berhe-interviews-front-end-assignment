@@ -102,7 +102,7 @@ comments.
 
 ![Capybara](https://c1.wallpaperflare.com/preview/845/421/238/capybara-rodent-guinea-pig-species-of-rodent.jpg)
 
-here's a capybara, look how beautiful it is
+here's a capybara, look how beautiful he is
 
 ### Frontend
 

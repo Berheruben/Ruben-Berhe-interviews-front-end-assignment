@@ -12,6 +12,7 @@ const RecipeDetails: React.FC = () => {
   const [newComment, setNewComment] = useState("");
   const [rating, setRating] = useState(0);
 
+  // Fetch recipe details and comments when the component mounts or the recipe ID changes
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
@@ -36,7 +37,7 @@ const RecipeDetails: React.FC = () => {
     fetchRecipe();
     fetchComments();
   }, [id]);
-
+  // Handle form submission to add a new comment
   const handleCommentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (rating < 1) {
@@ -62,7 +63,7 @@ const RecipeDetails: React.FC = () => {
     }
   };
 
-  if (!recipe) return <div>Loading...</div>;
+
 
   return (
     <div className="container mx-auto p-4">

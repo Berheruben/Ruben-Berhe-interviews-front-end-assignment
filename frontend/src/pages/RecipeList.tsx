@@ -8,6 +8,7 @@ import {
   useFetchDifficulties,
 } from "../hooks/useRecipes";
 
+// RecipeList component: displays a list of recipes with filters and pagination
 const RecipeList: React.FC = () => {
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState("");
@@ -29,14 +30,17 @@ const RecipeList: React.FC = () => {
   const [expandedRecipe, setExpandedRecipe] = useState<string | null>(null);
   const navigate = useNavigate();
 
+  // Refetch recipes when any of the filters or page changes
   useEffect(() => {
     refetch();
   }, [page, query, cuisine, difficulty, diet, refetch]);
 
+  // Toggle the expansion of a recipe's details
   const handleReadMore = (recipeId: string) => {
     setExpandedRecipe(expandedRecipe === recipeId ? null : recipeId);
   };
-
+  
+  // Handle the search action
   const handleSearch = (searchQuery: string) => {
     setQuery(searchQuery);
     setPage(1);

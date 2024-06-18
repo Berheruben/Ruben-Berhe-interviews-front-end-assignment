@@ -100,7 +100,7 @@ comments.
 
 ## How to run
 
-![Capybara](./public/images/capybara.jpg)
+![Capybara](https://c1.wallpaperflare.com/preview/845/421/238/capybara-rodent-guinea-pig-species-of-rodent.jpg)
 
 ### Frontend
 

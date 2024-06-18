@@ -6,7 +6,7 @@ import {
   useFetchCuisines,
   useFetchDiets,
   useFetchDifficulties,
-} from "../hooks/useRecipes";
+} from "../api/Recipes";
 import { Button } from "../components";
 
 // AddRecipe component: handles the form to add a new recipe

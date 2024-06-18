@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Header, Button, SkeletonCard } from "../components";
-import useRecipes from "../hooks/useRecipes";
+import useRecipes from "../api/Recipes";
 import {
   useFetchCuisines,
   useFetchDiets,
   useFetchDifficulties,
-} from "../hooks/useRecipes";
+} from "../api/Recipes";
 
 // RecipeList component: displays a list of recipes with filters and pagination
 const RecipeList: React.FC = () => {
@@ -39,7 +39,7 @@ const RecipeList: React.FC = () => {
   const handleReadMore = (recipeId: string) => {
     setExpandedRecipe(expandedRecipe === recipeId ? null : recipeId);
   };
-  
+
   // Handle the search action
   const handleSearch = (searchQuery: string) => {
     setQuery(searchQuery);

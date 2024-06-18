@@ -39,19 +39,11 @@ app.post("/recipes", upload.single("image"), (req, res) => {
   const { name, ingredients, instructions, cuisineId, dietId, difficultyId } =
     req.body;
 
-  // Ensure ingredients are parsed as array if sent as JSON string
-  let ingredientsArray;
-  try {
-    ingredientsArray = JSON.parse(ingredients);
-  } catch (e) {
-    ingredientsArray = ingredients ? ingredients.split(",") : [];
-  }
-
   // Create new recipe object
   const newRecipe = {
     id: String(Date.now()), // Generate a simple unique ID
     name,
-    ingredients: ingredientsArray,
+    ingredients: Array.isArray(ingredients) ? ingredients : [ingredients],
     instructions,
     cuisineId,
     dietId,

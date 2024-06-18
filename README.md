@@ -100,7 +100,7 @@ comments.
 
 ## How to run
 
-![Capybara](./images/capybara.jpg)
+![Capybara](./public/images/capybara.jpg)
 
 ### Frontend
 

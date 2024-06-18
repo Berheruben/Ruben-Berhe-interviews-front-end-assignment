@@ -100,4 +100,68 @@ comments.
 
 ## How to run
 
-...
+![Capybara](./images/capybara.jpg)
+
+### Frontend
+
+1. Navigate to the `frontend` directory:
+
+    ```bash
+    cd frontend
+    ```
+
+2. Install the dependencies:
+
+    ```bash
+    yarn install
+    ```
+
+3. Start the development server:
+
+    ```bash
+    yarn dev
+    ```
+
+The frontend should now be running on `http://localhost:5173`.
+
+### Backend
+
+1. Navigate to the `server` directory:
+
+    ```bash
+    cd server
+    ```
+
+2. Install the dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3. Start the JSON server:
+
+    ```bash
+    npm start
+    ```
+
+The backend should now be running on `http://localhost:8080`.
+
+### Decisions, Assumptions, and Doubts
+
+#### Decisions
+
+1. **Component-based Architecture**: Implemented a component-based architecture to ensure reusability and maintainability.
+2. **React Query**: Used React Query for data fetching, caching, and synchronization with the backend.
+3. **Zustand for State Management**: Employed Zustand for local state management to keep the global state in sync.
+4. **TypeScript**: Leveraged TypeScript for type checking and to reduce runtime errors.
+
+#### Assumptions
+
+1. **No Authentication**: Assumed that user authentication and authorization are out of scope for this task.
+2. **Data Model**: Used a simple JSON server to mock the backend and assume the data model provided is sufficient for the tasks.
+
+#### Doubts
+
+1. **UI Design**: Followed the provided UI examples but made some adjustments for better user experience.
+2. **Error Handling**: Implemented basic error handling but might need more detailed error feedback for users in a real-world application.
+

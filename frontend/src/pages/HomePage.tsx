@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "../components/Button";
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -22,12 +23,12 @@ const HomePage: React.FC = () => {
           />
           <h1 className="text-4xl font-bold mt-4">RecipeBook</h1>
           <p className="text-lg text-gray-700 mt-2">Discover Recipes</p>
-          <button
+          <Button
             onClick={() => navigate("/recipes")}
             className="bg-red-500 text-white py-2 px-4 rounded-full mt-4 hover:bg-red-600 transition duration-200"
           >
             Explore
-          </button>
+          </Button>
         </div>
       </div>
 

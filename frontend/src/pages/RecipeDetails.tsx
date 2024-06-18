@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import ReactStars from "react-stars";
+import Button from "../components/Button";
 
 const RecipeDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -11,6 +12,7 @@ const RecipeDetails: React.FC = () => {
   const [newComment, setNewComment] = useState("");
   const [rating, setRating] = useState(0);
 
+  // Fetch recipe details and comments when the component mounts or the recipe ID changes
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
@@ -35,7 +37,7 @@ const RecipeDetails: React.FC = () => {
     fetchRecipe();
     fetchComments();
   }, [id]);
-
+  // Handle form submission to add a new comment
   const handleCommentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (rating < 1) {
@@ -61,7 +63,7 @@ const RecipeDetails: React.FC = () => {
     }
   };
 
-  if (!recipe) return <div>Loading...</div>;
+
 
   return (
     <div className="container mx-auto p-4">
@@ -70,7 +72,7 @@ const RecipeDetails: React.FC = () => {
         <img
           src={`http://localhost:8080${recipe.image}`}
           alt={recipe.name}
-          className="w-full h-64 object-cover mb-4 rounded-lg"
+          className="w-full h-[30rem] object-cover mb-4 rounded-lg"
         />
       )}
       <h2 className="text-2xl font-bold mb-2">Ingredients</h2>
@@ -119,12 +121,12 @@ const RecipeDetails: React.FC = () => {
           color2={"#ffd700"}
           half={true}
         />
-        <button
+        <Button
           type="submit"
           className="bg-blue-500 text-white py-2 px-4 rounded"
         >
           Submit Review
-        </button>
+        </Button>
       </form>
     </div>
   );

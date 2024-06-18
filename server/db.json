@@ -352,87 +352,17 @@
       "difficultyId": "1",
       "image": "/uploads/Pasta-Primavera-f.jpg"
     },
-  
     {
-      "id": "1718207691780",
-      "name": "tiramisu alla fragola",
+      "id": "1718699693839",
+      "name": "pizza deep dish",
       "ingredients": [
-        "[\"mascarpone\"",
-        "\"fragola\"]"
+        "pomodoro",
+        "mozzarella"
       ],
-      "instructions": "mascarpone",
-      "cuisineId": "italian",
-      "dietId": "da",
-      "difficultyId": "dwa",
-      "image": "/uploads/1718207691777.jpg"
-    },
-    {
-      "id": "1718208384883",
-      "name": "pasta al pomodoro",
-      "ingredients": [
-        "[\"fusili\"",
-        "\"pomodoro\"",
-        "\"aglio\"",
-        "\"cipolla\"]"
-      ],
-      "instructions": "prova",
-      "cuisineId": "ita",
-      "dietId": "mediterranean",
-      "difficultyId": "easy",
-      "image": null
-    },
-    {
-      "id": "1718208814420",
-      "name": "pasta al pesto",
-      "ingredients": [
-        "[\"fusili\"",
-        "\"pesto\"]"
-      ],
-      "instructions": "acqua in pentola",
-      "cuisineId": "italian",
-      "dietId": "mediterranean",
-      "difficultyId": "easy",
-      "image": null
-    },
-    {
-      "id": "1718209091970",
-      "name": "pasta alle vongole",
-      "ingredients": [
-        "[\"spaghetti\"",
-        "\"vongole\"]"
-      ],
-      "instructions": "vongole",
-      "cuisineId": "italian",
-      "dietId": "meditteranean",
-      "difficultyId": "medium",
-      "image": "/uploads/1718209091957.jpg"
-    },
-    {
-      "id": "1718209192066",
-      "name": "pasta alla norma",
-      "ingredients": [
-        "[\"pasta\"",
-        "\"melanzane\"]"
-      ],
-      "instructions": "afjpaifjw",
-      "cuisineId": "italian",
-      "dietId": "meditteranean",
-      "difficultyId": "medium",
-      "image": null
-    },
-    {
-      "id": "1718276396931",
-      "name": "cheesecake",
-      "ingredients": 
-      [
-        "zucchero",
-        "nutella",
-        "burro"
-      ],
-      "instructions": "Per preparare la cheesecake senza cottura iniziate sbriciolando i biscotti, dovrete ridurli in polvere con l’aiuto di un mixer oppure di un mattarello, mettendo i biscotti in un sacchetto per alimenti oppure tra due fogli di carta da forno.\r\n\r\nAggiungete lo zucchero e la scorza grattugiata di un limone, quindi fondete il burro e unitelo ai biscotti incorporandolo bene.\r\n\r\nFate rinvenire la gelatina in 60 g di acqua fredda. Foderate la base di uno stampo a cerniera di 24 cm con della carta da forno quindi versatevi il composto di biscotti e compattate bene e livellate, questa sarà la base della vostra cheesecake. Infine riponete in frigorifero.",
-      "cuisineId": "italian",
-      "dietId": "meditteranean",
-      "difficultyId": "medium",
+      "instructions": "fwae",
+      "cuisineId": "2",
+      "dietId": "2",
+      "difficultyId": "3",
       "image": null
     }
   ],
@@ -646,6 +576,13 @@
       "date": "2024-06-14T11:36:17.146Z",
       "recipeId": "1",
       "id": "Kj8-GHT"
+    },
+    {
+      "comment": "delicioius",
+      "rating": 4.5,
+      "date": "2024-06-18T08:00:42.795Z",
+      "recipeId": "3",
+      "id": "27P8oqb"
     }
   ],
   "cuisines": [
